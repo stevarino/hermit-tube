@@ -1,9 +1,6 @@
 credentials.yaml
-**/*.sqlite3*
-**/output/**
-**/state/**
+*.sqlite3*
+output
 .vscode
 __pycache__
-env
-**/*.sqbpro
-*.egg-info
+*.sqbpro
