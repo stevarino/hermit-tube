@@ -17,7 +17,7 @@ git pull
 echo ''
 date +'%Y%m%d %H:%M:%S'
 echo "Scanning YouTube..."
-../$(venv)/bin/cubedtube scraper --quota 60
+../$venv/bin/cubedtube scraper --quota 60
 echo "Rendering site..."
-../$(venv)/bin/cubedtube frontend
+../$venv/bin/cubedtube frontend
 rsync -cri output/ "/var/www/$(../env/bin/cubedtube site_name)/html/"
