@@ -20,4 +20,4 @@ echo "Scanning YouTube..."
 ../$venv/bin/cubedtube scraper --quota 60
 echo "Rendering site..."
 ../$venv/bin/cubedtube frontend
-rsync -cri output/ "/var/www/$(../env/bin/cubedtube site_name)/html/"
+rsync -cri output/ "/var/www/$(../$venv/bin/cubedtube site_name)/html/"
