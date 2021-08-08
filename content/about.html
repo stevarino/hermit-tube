@@ -2,6 +2,11 @@
 {% block title %}HermitTube - About{% endblock %}
 {% block content %}
     <h2>HermitTube - Follow your favorite Hermits through all the seasons!</h2>
+    <h3 style='text-align: center; display: flex; justify-content: space-evenly;'>
+        <div>{{ stats.count }} Videos</div>
+        <div>{{ '%.1f' % (stats.seconds / 3600.0) }} Hours</div>
+        <div>{{ '%.1f' % ((stats.last - stats.first) / 3600.0 / 24 / 365) }} Years</div>
+    </h3>
     <p>
         Watch several Hermits in one sitting, all in chronological order! See
         a build being built in the background in one video and it's completion
@@ -49,18 +54,16 @@
     <p>
         The site runs in a batch mode, regularly refreshing itself every few
         minutes. This makes traffic extremely cheap to host and therefore the
-        site should scale very well. The backend (as much as one exists) runs on
-        Python while the frontend is very minimal
-        Javascript. I might sprinkle some PHP later for some special
-        authenticated endpoints, or I may just move those endpoints to a
-        separate domain and keep everything Python. TBD...
+        site should scale very well. The backend runs on Python Flask while the
+        frontend is very minimal custom Javascript.
     </p>
     <p>
         The site is somewhat intended to be used by any creators for
-        cross-channel content creation, but its not quite there yet. There is
-        almost nothing Hermit-specific in the code so it could be quickly
-        adapted for another use-case. <a href='mailto:stevarino@hermit.tube'>Let
-        me know</a> if this interests you and I would be thrilled to help
+        cross-channel content creation, see <a
+        href='https://github.com/stevarino/cubed-tube'>CubedTube</a> for more
+        info. There is almost nothing Hermit-specific in the code so it could
+        be quickly adapted for another use-case. <a href='mailto:stevarino@hermit.tube'
+        >Let me know</a> if this interests you and I would be thrilled to help
         get you set up!
     </p>
     <h2>FAQ</h2>
@@ -81,9 +84,9 @@
         use YouTube playlists as that REALLY helps with finding and indexing
         these videos.
     </p>
-    <p><strong>You only list YouTube Playlists - why?</strong></p>
+    <p><strong>Why focus on YouTube Playlists?</strong></p>
     <p>
-        Because that seems to be where they are all at. But I fully intend to
+        Because that seems to be where most videos are at. But I fully intend to
         support other mediums when and if it makes sense. Let me know on
         <a href='https://github.com/stevarino/hermit-tube/issues'>github</a> if
         you have any suggestions.
@@ -92,13 +95,8 @@
         Even within the YouTube garden, <a
             href='https://developers.google.com/youtube/v3/determine_quota_cost'>it
             can be very expensive</a> (in fake YouTube-quota dollars) to find
-        videos not linked through a playlist. The site could be modified in
-        order
-        to support non-playlist indexing (perhaps searching by user and
-        keywords?) but I'm unsure how reliable that would be. Further, all
-        Hermits have playlists for the current season so I would like to avoid
-        this as the error rate would likely be quite
-        high.
+        videos not linked through a playlist. The site supports directly listed
+        videos if a playlist is not available, but its a very manual process.
     </p>
     <p><strong>Some videos are out of order, can this be fixed? Also there are
             videos in here which are not relevant to HermitCraft!</strong></p>

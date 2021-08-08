@@ -14,6 +14,7 @@ cd "$(dirname "$0")/.."
 venv="ht_dev"
 
 git pull
+../$venv/bin/python scripts/check_version.py
 echo ''
 date +'%Y%m%d %H:%M:%S'
 echo "Scanning YouTube..."
