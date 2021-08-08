@@ -14,11 +14,11 @@ cd "$(dirname "$0")/.."
 venv="ht_dev"
 
 git pull
-../$venv/bin/python scripts/check_version.py
+# ../$venv/bin/python scripts/check_version.py
 echo ''
 date +'%Y%m%d %H:%M:%S'
 echo "Scanning YouTube..."
-../$venv/bin/cubedtube scraper --quota 60
+../$venv/bin/cubedtube scraper
 echo "Rendering site..."
 ../$venv/bin/cubedtube frontend
 rsync -cri output/ "/var/www/$(../$venv/bin/cubedtube site_name)/html/"
