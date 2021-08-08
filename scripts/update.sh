@@ -11,7 +11,7 @@ set -e
 
 cd "$(dirname "$0")/.."
 
-venv="ht_prod"
+venv="ht_dev"
 
 git pull
 echo ''
